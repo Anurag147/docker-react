@@ -3,3 +3,6 @@ services:
          - docker
 before_install: 
          - docker build -t asthana/docker-react -f Dockerfile.dev . 
+
+script: 
+         - docker run -e CI=true asthana/docker-react npm run test git  
